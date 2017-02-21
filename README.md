@@ -1,14 +1,16 @@
 # Getting Git Notes
 
-## Overview
+## Making Changes
 
-## init: git init
+### Overview
 
-## Master: git init
+### init: git init
 
-## init: git add
+### Master: git init
 
-## Master: git add
+### init: git add
+
+### Master: git add
 
 `git add .`
 
