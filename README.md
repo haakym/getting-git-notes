@@ -1,6 +1,23 @@
 # Getting Git Notes
 
+[Making Changes - Part 1](#Making-Changes---Part-1)
+
 ## Making Changes - Part 1
+
+[Overview](#Overview)
+[init: git init](#init:-git-init)
+[Master: git init](#Master:-git-init)
+[init: git add](#init:-git-add)
+[Master: git add](#Master:-git-add)
+[init: git commit](#init:-git-commit)
+[Master: git commit](#Master:-git-commit)
+[init: git rm](#init:-git-rm)
+[Master: git rm](#Master:-git-rm)
+[init: git reset](#init:-git-reset)
+[Master: git reset](#Master:-git-reset)
+[init: git revert](#init:-git-revert)
+[Master: git revert](#Master:-git-revert)
+[Summary](#Summary)
 
 ### Overview
 
@@ -103,13 +120,53 @@ After deleting a file (via UI or `rm file.txt`) this change can be tracked using
 
 ### Master: git rm
 
+`git rm --cached file.txt`
 
+- Remove from repository but keep local copy
+- Opposite to `git add`
 
 ### init: git reset
 
+`git reset`
+
+- Unstages changes
+- Command is shown when running `git status`:
+ - (use "git reset HEAD <file>..." to unstage change)
+ - `HEAD` can be dropped as this is the default
+
+`git reset file.txt`
+
+- Removes staged file
+- Effectively undid the `git add file.txt` command
+
+`git reset` removes all staged changes
+
+`git reset` undoes commands such as `git add` and `git rm`
+
 ### Master: git reset
 
+Resetting commits with `git reset`
+
+`git reset SHAID^`
+
+- Using the Hash/SHA from a commit `git reset` can be used to undo a commit 
+- note: `^` after SHA
+- In other words, it resets the repo back to the state before the commit
+
+`git reset --hard SHAID^`
+
+- Resets the repo back to the *clean* state before the commit
+
+`git reset --hard`
+
+- Resets repo back to *clean* state
+- For example, remove staged files
+
+`git reset --hard` is a *destructive* command so be careful when using it!
+
 ### init: git revert
+
+automatically create a new commit containing changes that undo the original commit
 
 ### Master: git revert
 
