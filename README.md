@@ -1,36 +1,23 @@
 # Getting Git Notes
 
-[Making Changes - Part 1](#Making-Changes---Part-1)
+[Making Changes - Part 1](#making-changes---part-1)
 
 ## Making Changes - Part 1
 
-[Overview](#overview)
-
-[init: git init](#init:-git-init)
-
-[Master: git init](#master:-git-init)
-
-[init: git add](#init:-git-add)
-
-[Master: git add](#master:-git-add)
-
-[init: git commit](#init:-git-commit)
-
-[Master: git commit](#master:-git-commit)
-
-[init: git rm](#init:-git-rm)
-
-[Master: git rm](#master:-git-rm)
-
-[init: git reset](#init:-git-reset)
-
-[Master: git reset](#master:-git-reset)
-
-[init: git revert](#init:-git-revert)
-
-[Master: git revert](#master:-git-revert)
-
-[Summary](#summary)
+- [Overview](#overview)
+- [init: git init](#init:-git-init)
+- [Master: git init](#master:-git-init)
+- [init: git add](#init:-git-add)
+- [Master: git add](#master:-git-add)
+- [init: git commit](#init:-git-commit)
+- [Master: git commit](#master:-git-commit)
+- [init: git rm](#init:-git-rm)
+- [Master: git rm](#master:-git-rm)
+- [init: git reset](#init:-git-reset)
+- [Master: git reset](#master:-git-reset)
+- [init: git revert](#init:-git-revert)
+- [Master: git revert](#master:-git-revert)
+- [Summary](#summary)
 
 
 ### Overview
