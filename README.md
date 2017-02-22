@@ -39,14 +39,14 @@
 
 - Unlikey to use the options for `git init`
 - What does `git init` do?
- - Creates a .git directory: > Initialized empty Git repository in /dir/.git/
- - .git directory serves as a database to store info about current state of repo and its history
- - Deleting the .git directory will remove git repository
+ - Creates a **.git** directory: "Initialized empty Git repository in /dir/.git/"
+ - The **.git** directory serves as a database to store info about current state of repo and its history
+ - Deleting the **.git** directory will remove git repository
 
 ### init: git add
 
-- Changes are not automatically tracked by Git, important difference to other version control systems
-- Git add allows selection of what files should be tracked
+- Changes are not automatically tracked by Git. This is an important difference to other version control systems.
+- `git add` allows selection of what files should be tracked
 - `git add file1.txt` adds a single file
 - `git add .` adds multiple files
 - `git add dir` adds all files in a directory
