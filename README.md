@@ -196,3 +196,4 @@ Automatically create a new commit containing changes that undo the original comm
 
 ### Summary
 
+![Image of commands summary](https://github.com/haakym/getting-git-notes/blob/master/images/part-1/summary.png)
