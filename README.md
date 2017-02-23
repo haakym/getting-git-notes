@@ -1,6 +1,10 @@
 # Getting Git Notes
 
-[Making Changes - Part 1](#making-changes---part-1)
+- [Making Changes - Part 1](#making-changes---part-1)
+- [Viewing History - Part 2](#viewing-history---part-2)
+- [Managing Workflow - Part 3](#managing-workflow---part-3)
+- [Sharing Work - Part 4](#sharing-work---part-4)
+- [Everyday Git - Part 5](#everyday-git---part-5)
 
 ## Making Changes - Part 1
 
@@ -18,7 +22,6 @@
 - [init: git revert](#init-git-revert)
 - [Master: git revert](#master-git-revert)
 - [Summary](#summary)
-
 
 ### Overview
 
@@ -197,3 +200,144 @@ Automatically create a new commit containing changes that undo the original comm
 ### Summary
 
 ![Image of commands summary](https://github.com/haakym/getting-git-notes/blob/master/images/part-1/summary.png)
+
+## Viewing History - Part 2
+
+### Overview
+
+- `git status`
+- `git log`
+- `git show`
+- `git diff`
+
+### init: git status
+
+`git status` on an empty repository will show
+
+```
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+- Shows current branch
+- The current state of the repository
+- Note, following words can be subsituted in Git:
+	- working - current/local
+	- tree - branch/repository
+
+`git status` on a repo with some unstaged files will show
+
+```
+On branch master
+
+Initial commit
+
+	file-1.txt
+	file-2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+- Details about new files
+- Git is very helpful. It recommends what command to use next, see final line recommends "git add" to stage files
+
+`git status` on repo with a staged and unstaged file
+
+```
+On branch master
+
+Initial commit
+
+Changes to be committed:
+	(use "git rm --cached <file>..." to unstage)
+
+		new file:	file-1.txt
+
+Untracked files:
+	(use "git add <file>..." to include what will be committed)
+
+		file-2.txt
+
+```
+
+### Master: git status
+
+The states of `git status`
+
+- Untracked files, not under version control
+- Changes to be committed, 
+- clean state
+- modified
+
+### init: git log
+
+### Master: git log
+
+### init: git show
+
+### Master: git show
+
+### init: git diff
+
+### Master: git diff
+
+### Summary
+
+
+## Managing Workflow - Part 3
+
+### Overview
+
+### init: git branch
+
+### Master: git branch
+
+### init: git checkout
+
+### Master: git checkout
+
+### init: git merge
+
+### Master: git merge
+
+### init: git rebase
+
+### Master: git rebase
+
+### init: git cherry-pick
+
+### Master: git cherry-pick
+
+### Summary
+
+
+
+## Sharing Work - Part 4
+
+### Overview
+
+### init: git clone
+
+### Master: git clone
+
+### init: git remote
+
+### Master: git remote
+
+### init: git push
+
+### Master: git push
+
+### init: git fetch
+
+### Master: git fetch
+
+### init: git pull
+
+### Master: git pull
+
+### Summary
+
