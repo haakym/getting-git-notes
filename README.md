@@ -1,12 +1,12 @@
 # Getting Git Notes
 
-- [Making Changes - Part 1](#making-changes---part-1)
-- [Viewing History - Part 2](#viewing-history---part-2)
-- [Managing Workflow - Part 3](#managing-workflow---part-3)
-- [Sharing Work - Part 4](#sharing-work---part-4)
-- [Everyday Git - Part 5](#everyday-git---part-5)
+ 1. [Making Changes](#making-changes)
+ 2. [Viewing History](#viewing-history)
+ 3. [Managing Workflow](#managing-workflow)
+ 4. [Sharing Work](#sharing-work)
+ 5. [Everyday Git](#everyday-git)
 
-## Making Changes - Part 1
+## Making Changes
 
 - [Overview](#overview)
 - [init: git init](#init-git-init)
@@ -267,25 +267,137 @@ Untracked files:
 
 The states of `git status`
 
-- Untracked files, not under version control
-- Changes to be committed, 
-- clean state
-- modified
+- Untracked files: not under version control so any changes to these files will not be tracked
+- Changes to be committed: tracked files that have been staged
+- Clean state: no untracked files and all tracked files are unmodified
+- Modified: tracked files that have been changed since the previous commit
+
+Life cycle:
+- New file
+ - untracked -> staged -> unmodified
+- Tracked file
+ - modified -> staged -> unmodified
+
+`git reset` can be used to reverse aforementioned cycle
 
 ### init: git log
 
+`git log` shows history of commits
+
+- Commit SHA
+- Author
+- Date
+- Full commit message
+- Navigate up and down via arrow keys
+- q to quit
+
+`git log -n 2` or `git log -2` will limit the number of commits shown
+
+`git log --online`
+
+- Commit SHA
+- Commit message
+
+`git log filename` show only the commit history for a single file
+
+`git log --oneline filename` combining above commands
+
 ### Master: git log
+
+`git log --graph` visualises a git repo as a tree/graph
+
+`git log --graph --decorate` will show HEAD
+
+#### HEAD
+
+- A pointer to the tip of your current branch
+- More simply, a reference to the most recent commit
+
+`git log --oneline -3` to illustrate example uses of HEAD
+
+```
+* 733f7e4 (HEAD -> master) contents and titles
+* 99474b1 show image in summary
+* 1ca93bc summary image
+```
+
+- HEAD can be used to relatively reference other commits with ^ and ~
+ - HEAD - most recent commit
+ - HEAD~1 or HEAD^ - 1 commit before HEAD
+ - HEAD~2 or HEAD^^ - 2 commits before HEAD
+ - HEAD~3 or HEAD^^^ - 3 commits before HEAD
+- Commit SHAs can also be used
+ - HEAD or 733f7e4 - most recent commit
+ - 99474b1 or 733f7e4~1 or 733f7e4^ - 1 commit before HEAD
+ - 1ca93bc or 733f7e4~2 or 733f7e4^^ - 2 commits before HEAD
 
 ### init: git show
 
+`git show`
+
+- Similar to git log with its options being almost identical
+- By default only shows the most recent commit
+- Shows the changes in the commit
+
+`git show SHA` for a specific commit
+
 ### Master: git show
+
+`git show --name--status`
+
+- Show each file changed and how it was changed
+ - M - modified
+ - A - added
+ - D - deleted
+
+ Use `git show` to show information on a single commit, for everything else use `git log`
 
 ### init: git diff
 
+`git diff` on tracked files with modifications
+
+- Additions in green with a +
+- Deletions in red with a -
+- Scroll through changes with keys, q to quit
+- Only displays changes to tracked modified files, does not display changes to untracked or staged files
+
+`git diff --staged` to see staged changes
+
+`git diff filename` to only show changes in a file
+
 ### Master: git diff
+
+`git diff -w` ignore whitespace changes
+
+Example log:
+
+```
+* 733f7e4 contents and titles
+* 99474b1 show image in summary
+* 1ca93bc summary image
+```
+
+`git diff 733f7e4..99474b1`
+
+- Show changes between a range of SHAs
+- Will ignore recent changes (HEAD) as outside of range specified
+- Note: more recent commit is first, counter intuitive as will show diff as deletions (-)
+
+`git diff 99474b1..733f7e4`
+
+- Note: more recent commit is second, easier to reason with as will show diff as additions (+)
 
 ### Summary
 
+With the exception of `git status` other commands may be seldom used
+
+`git log --oneline` to get an overview of an unfamiliar repository
+
+`git log --oneline --name-status -10` to see recent commits
+
+`git diff 1ca93bc..HEAD`
+
+- Older SHA first 
 
 ## Managing Workflow - Part 3
 
