@@ -403,17 +403,87 @@ With the exception of `git status` other commands may be seldom used
 
 ### Overview
 
+manage workflow = manage branches
+
+- `git branch`
+- `git checkout`
+- `git merge`
+- `git rebase`
+- `git cherry-pick`
+
 ### init: git branch
+
+`git branch` or `git branch  --list`
+
+- show all branches
+- selected branch shown with (*)
+
+`git branch branch-1`
+
+- create new branch
+- recommended to use only lower case letters, dashes and numbers
+
+`git branch -d branch-1` remove branch
 
 ### Master: git branch
 
+When creating a branch, the new branch will share the same commit history with the branch we branched from.
+
+However, branches do not share future commits and when changes are committed to a branch, other branches that were once the same become unsynced.
+
+Braching can be used to manage multiple workflows simultaenously whilst still keeping track of separate commit histories and files that were changed.
+
 ### init: git checkout
+
+`git checkout branch-1` switch branch to branch-1
+
+`git checkout -b branch-2` create and switch to branch-2
+
+Recommended to be in a clean state before switching branches
 
 ### Master: git checkout
 
+`git checkout -- file-1.txt`
+
+- shorthand for `git checkout HEAD file-1.txt`
+- discards unstaged changes
+
+`git checkout SHA file-1.txt` checkout a file from a previous commit
+
+`git checkout SHA`
+
+`git checkout -b initial-branch SHA`
+
 ### init: git merge
 
+Merging a branch to master
+
+`git checkout master`
+
+`git merge new-branch`
+
+- Branch with the changes is passed to `git merge` while we are on the branch we want the changes to be merged into
+
 ### Master: git merge
+
+Merge conflicts occur when `git merge` is used on two branches that have conflicting changes and git fails to successfully merge them, requiring the user to resolve this conflict manually.
+
+<!-- Merge conflict example:
+
+git checkout -b add-timestamp
+
+date >> file-1.txt
+
+git commit -am 'Add timestamp to file 1'
+
+git checkout master
+
+date >> file-1.txt
+
+git commit -am 'Add timestamp to file-1'
+ -->
+
+When you resolve a merge conflict git creates a generated merge commit
 
 ### init: git rebase
 
